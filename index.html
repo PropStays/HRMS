@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northstar HRMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <section class="auth-screen" id="authScreen">
+    <div class="auth-card"><div class="brand auth-brand"><span class="brand-mark">N</span><span>northstar<span class="brand-dot">.</span></span></div><p class="eyebrow">WORKFORCE OPERATIONS</p><h1 id="authTitle">Sign in to Northstar</h1><p class="auth-copy" id="authCopy">Manage your people, attendance, leave, and payroll.</p><form id="authForm"><label>Name<input id="authName" autocomplete="name" placeholder="Your name" hidden></label><label>Email<input id="authEmail" type="email" autocomplete="email" placeholder="you@company.com" required></label><label>Password<input id="authPassword" type="password" autocomplete="current-password" placeholder="••••••••" required></label><button class="button primary full-button" type="submit" id="authSubmit">Sign in</button></form><button class="auth-toggle" id="authToggle">Create a new account</button><p class="auth-note" id="authNote"></p></div>
+  </section>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">N</span><span>northstar<span class="brand-dot">.</span></span></div>
+      <div class="workspace-switcher"><span class="workspace-icon">W</span><span><small>Workspace</small>Acme India</span><span class="chevron">⌄</span></div>
+      <div class="global-search"><label for="globalSearch">Search HRMS</label><div class="global-search-box"><span>⌕</span><input id="globalSearch" placeholder="Search HRMS..." autocomplete="off"><kbd>⌘ K</kbd></div><div class="search-results" id="searchResults" role="listbox"></div></div>
+      <label class="role-switcher"><span>Viewing as</span><select id="roleSelect" aria-label="Select user role"></select></label>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <p class="nav-label">Workspace</p>
+        <button class="nav-item active" data-view="Overview"><span class="nav-icon">◈</span>Overview</button>
+        <button class="nav-item" data-view="Employee Portal"><span class="nav-icon">♙</span>Employee Portal</button>
+        <button class="nav-item" data-view="Employees"><span class="nav-icon">♙</span>Employees <span class="nav-count">248</span></button>
+        <button class="nav-item" data-view="Attendance"><span class="nav-icon">◷</span>Attendance</button>
+        <button class="nav-item" data-view="Leave"><span class="nav-icon">◇</span>Leave <span class="nav-count alert">12</span></button>
+        <button class="nav-item" data-view="Payroll"><span class="nav-icon">▣</span>Payroll</button>
+        <p class="nav-label second">Manage</p>
+        <button class="nav-item" data-view="Documents"><span class="nav-icon">▤</span>Documents</button>
+        <button class="nav-item" data-view="Departments"><span class="nav-icon">⊞</span>Departments</button>
+        <button class="nav-item" data-view="Reports"><span class="nav-icon">▥</span>Reports</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-item"><span class="nav-icon">?</span>Help center</button>
+        <button class="nav-item"><span class="nav-icon">⚙</span>Settings</button>
+        <div class="profile-area"><button class="profile-mini" id="profileMenu"><span class="avatar avatar-purple">RK</span><span><b id="userName">Ananya Shah</b><small id="userRole">Super Admin</small></span><span class="more">⌄</span></button><div class="profile-menu" id="profileMenuPanel"><button id="employeePortal">♙ Employee Portal</button><button id="editProfile">✎ Edit profile</button><button id="logout">↪ Log out</button></div></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" aria-label="Open menu">☰</button>
+        <div class="breadcrumbs"><span>Workspace</span><b>/</b><strong id="pageTitle">Overview</strong></div>
+        <div class="top-actions"><button class="icon-button" aria-label="Search">⌕</button><button class="icon-button notification" aria-label="Notifications">♢<i></i></button><span class="top-date">Friday, 04 September 2026</span></div>
+      </header>
+
+      <div class="content-wrap">
+        <section class="module-launcher" aria-label="HR modules">
+          <button class="module-tile active" data-module="Employee Portal"><span class="module-icon employee-icon">♙</span><b>Employee Dashboard</b><small>Self-service</small></button>
+          <button class="module-tile" data-module="HR Setup"><span class="module-icon setup-icon">⚙</span><b>HR Setup</b><small>Masters & settings</small></button>
+          <button class="module-tile" data-module="Leave"><span class="module-icon leave-icon">▣</span><b>Leaves</b><small>Requests & balance</small></button>
+          <button class="module-tile" data-module="Recruitment"><span class="module-icon recruitment-icon">♙</span><b>Recruitment</b><small>Hiring pipeline</small></button>
+          <button class="module-tile" data-module="Shift & Attendance"><span class="module-icon attendance-icon">▣</span><b>Shift & Attendance</b><small>Time & shifts</small></button>
+          <button class="module-tile" data-module="User Access"><span class="module-icon setup-icon">♙</span><b>User Access</b><small>Roles & permissions</small></button>
+          <button class="module-tile" data-module="AI Automation"><span class="module-icon attendance-icon">✦</span><b>AI Automation</b><small>Smart HR actions</small></button>
+        </section>
+        <section class="welcome-row"><div><p class="eyebrow">FRIDAY, 04 SEPTEMBER 2026</p><h1>Good morning, Ananya <span>✦</span></h1><p class="subhead">Here’s what’s happening across your workforce today.</p></div><button class="button primary" id="addEmployee"><span>＋</span> Add employee</button></section>
+
+        <section class="metrics-grid" aria-label="Workforce summary">
+          <article class="metric-card"><div class="metric-top"><span class="metric-label">Total employees</span><span class="metric-icon coral">♙</span></div><div class="metric-value">248</div><div class="metric-foot up">↗ 8.2% <span>vs last month</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span class="metric-label">Present today</span><span class="metric-icon mint">◷</span></div><div class="metric-value">226 <small>/ 248</small></div><div class="metric-foot up">↗ 91.1% <span>attendance rate</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span class="metric-label">On leave</span><span class="metric-icon yellow">◇</span></div><div class="metric-value">12</div><div class="metric-foot neutral"><span>4.8% of workforce</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span class="metric-label">Payroll this month</span><span class="metric-icon blue">₹</span></div><div class="metric-value">₹42.8L</div><div class="metric-foot neutral"><span>Due in 11 days</span></div></article>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="panel attendance-panel"><div class="panel-heading"><div><h2>Attendance overview</h2><p>Daily attendance for this month</p></div><button class="select-button">September 2026 <span>⌄</span></button></div><div class="chart-legend"><span><i class="legend-dot present"></i>Present</span><span><i class="legend-dot absent"></i>Absent</span><span><i class="legend-dot leave"></i>On leave</span></div><div class="chart"><div class="y-axis"><span>250</span><span>200</span><span>150</span><span>100</span><span>50</span><span>0</span></div><div class="chart-area"><div class="grid-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bars"><div class="bar-group"><b class="bar present-bar" style="height:83%"></b><b class="bar absent-bar" style="height:6%"></b><b class="bar leave-bar" style="height:5%"></b><small>01</small></div><div class="bar-group"><b class="bar present-bar" style="height:86%"></b><b class="bar absent-bar" style="height:4%"></b><b class="bar leave-bar" style="height:5%"></b><small>02</small></div><div class="bar-group"><b class="bar present-bar" style="height:85%"></b><b class="bar absent-bar" style="height:7%"></b><b class="bar leave-bar" style="height:4%"></b><small>03</small></div><div class="bar-group"><b class="bar present-bar" style="height:88%"></b><b class="bar absent-bar" style="height:3%"></b><b class="bar leave-bar" style="height:5%"></b><small>04</small></div><div class="bar-group"><b class="bar present-bar" style="height:86%"></b><b class="bar absent-bar" style="height:5%"></b><b class="bar leave-bar" style="height:4%"></b><small>05</small></div><div class="bar-group"><b class="bar present-bar" style="height:78%"></b><b class="bar absent-bar" style="height:10%"></b><b class="bar leave-bar" style="height:5%"></b><small>06</small></div><div class="bar-group"><b class="bar present-bar" style="height:80%"></b><b class="bar absent-bar" style="height:8%"></b><b class="bar leave-bar" style="height:5%"></b><small>07</small></div><div class="bar-group"><b class="bar present-bar" style="height:89%"></b><b class="bar absent-bar" style="height:4%"></b><b class="bar leave-bar" style="height:4%"></b><small>08</small></div><div class="bar-group"><b class="bar present-bar" style="height:87%"></b><b class="bar absent-bar" style="height:5%"></b><b class="bar leave-bar" style="height:4%"></b><small>09</small></div><div class="bar-group"><b class="bar present-bar" style="height:90%"></b><b class="bar absent-bar" style="height:3%"></b><b class="bar leave-bar" style="height:4%"></b><small>10</small></div></div></div></div></article>
+          <aside class="panel assistant-panel"><div class="assistant-heading"><div class="sparkle">✦</div><div><h2>Ask Northstar</h2><p>Your AI HR assistant</p></div><span class="online-dot"></span></div><div class="assistant-prompt"><span>Try asking</span><p>“Who is absent today?”</p><p>“Show expiring documents”</p><p>“Summarize this month’s leaves”</p></div><div class="assistant-input"><input id="assistantInput" placeholder="Ask anything about your people..." aria-label="Ask Northstar"><button id="askAssistant" aria-label="Send question">↑</button></div><div class="assistant-note">Northstar can access your HR data securely.</div></aside>
+        </section>
+
+        <section class="lower-grid"><article class="panel table-panel"><div class="panel-heading"><div><h2>Pending leave requests</h2><p>Needs your attention</p></div><button class="text-button" data-view="Leave">View all <span>→</span></button></div><div class="request-list"><div class="request-row"><span class="avatar avatar-blue">RK</span><div class="request-name"><b>Rohan Kumar</b><small>Casual leave · 04 Sep</small></div><span class="status-pill pending">Pending</span><button class="row-more">•••</button></div><div class="request-row"><span class="avatar avatar-orange">PM</span><div class="request-name"><b>Priya Menon</b><small>Earned leave · 07–09 Sep</small></div><span class="status-pill pending">Pending</span><button class="row-more">•••</button></div><div class="request-row"><span class="avatar avatar-green">SA</span><div class="request-name"><b>Siddharth Ahuja</b><small>Work from home · 04 Sep</small></div><span class="status-pill pending">Pending</span><button class="row-more">•••</button></div></div></article><article class="panel birthdays-panel"><div class="panel-heading"><div><h2>Celebrations</h2><p>Coming up this week</p></div><span class="celebrate-icon">✧</span></div><div class="birthday"><span class="avatar avatar-pink">NV</span><div><b>Neha Verma</b><small>Birthday · Today</small></div><button class="wish-button">Send wishes</button></div><div class="birthday"><span class="avatar avatar-yellow">AM</span><div><b>Arjun Mehta</b><small>Work anniversary · 06 Sep</small></div><button class="wish-button">Congratulate</button></div></article></section>
+        <div class="footer-note"><span class="pulse"></span> All systems operational <span>•</span> Last synced 2 minutes ago</div>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
